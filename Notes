@@ -1,0 +1,43 @@
+Modern JS is underpinned by lots of tools, the foundation of these tools being nodeJS and the npm eco system where 3rd party open source tools, libraries, framework etc can be found (ReactJS, AngularJS etc). There are also dev tools e.g. for task automations, automatic browswer reloading, compile JS down to ES5.
+
+In order to use and share these packages we need a tool to install and manage them which is where npm comes in.
+
+npm is a command line interface which allows us to install and manage packages but also write scripts to use on dev tools.
+
+1. Babel allows us to convert ESNext down to ES5 so all browswers are        capable of understanding the code.
+
+2. We want to use ES6 Modules to make our code more modular, we need to      bundle these module files together into a single file using a 'module      bundler' (as browswers don't yet support this module functionality).
+   Webpack is the most popular module bundler out there. 
+   
+   Webpack does a lot more than just bundling modules i.e. code splitting, loading many different types of assests like SASS or images, decreasing our JS bundle size using an algorithm called tree shaking.... etc
+   
+The easiest way to run these (^) npm packages is by using npm scripts which allows us to run all these tools automatically and very easily in our command line interface i.e. putting it all together with an automated development setup powered by npm scripts
+
+
+All the final code in dist is what we are going to ship to the client 
+
+The src folder is only for dev purposes and all our src code gets compiled/ bundled into our dist(ribution) folder
+
+// when importing a module do not need to include .js part of path
+import str from './models/Search';
+
+// 3 different ways in which to import:
+
+// 1. multiple imports
+import { addFn, multiplyFn, ID } from './views/searchView';
+
+console.log(`Using imported functions ${addFn(ID, 2)} and ${multiplyFn(3, 5)}. ${str}`);
+
+// 1. using different names 
+import { addFn as a, multiplyFn as m, ID } from './views/searchView'; 
+
+console.log(`Using imported functions ${a(ID, 2)} and ${m(3, 5)}. ${str}`);
+
+// 1. Importing everything and put it into searchView object
+import * as searchView from './views/searchView';
+
+console.log(`Using imported functions ${searchView.addFn(searchView.ID, 2)} and ${searchView.multiplyFn(3, 5)}. ${str}`);
+
+
+
+
