@@ -22,7 +22,7 @@ import { elements, renderLoader, clearLoader } from './views/base';
 */
 const state = {};
 // for testing
-window.state = state;
+//window.state = state;
 
 //----------------------SEARCH CONTROLLER--------------------------
 const controlSearch = async () => {
@@ -241,8 +241,8 @@ elements.recipe.addEventListener('click', e => {
 });
 
 // for testing
-const l = new List();
-window.l = l;
+/*const l = new List();
+window.l = l;*/
 
 
 
